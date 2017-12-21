@@ -1348,4 +1348,31 @@ function get_oauth($appid, $secret, $snsapi = 'snsapi_base', $expired = '600')
 			return $userinfo;
 		}
 		return json_decode($wxuser, true);
-	}	 
+	}
+	/**
+	计算两个日期之间天数
+	**/	 
+	function timediff($begin_time,$end_time)
+{
+      if($begin_time < $end_time){
+         $starttime = $begin_time;
+         $endtime = $end_time;
+      }else{
+         $starttime = $end_time;
+         $endtime = $begin_time;
+      }
+
+      //计算天数
+      $timediff = $endtime-$starttime;
+      $days = intval($timediff/86400);
+      //计算小时数
+      $remain = $timediff%86400;
+      $hours = intval($remain/3600);
+      //计算分钟数
+      $remain = $remain%3600;
+      $mins = intval($remain/60);
+      //计算秒数
+      $secs = $remain%60;
+      $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
+      return $res;
+}
