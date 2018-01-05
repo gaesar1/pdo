@@ -1376,3 +1376,19 @@ function get_oauth($appid, $secret, $snsapi = 'snsapi_base', $expired = '600')
       $res = array("day" => $days,"hour" => $hours,"min" => $mins,"sec" => $secs);
       return $res;
 }
+/*
+ * 根据ip获取省市
+ */
+function get_address($ak='') {
+    $ak = (empty($ak))?"M4eExM3AxIcxOdnFGciErtK3":$ak;
+    $url ="https://api.map.baidu.com/location/ip?ak=$ak&coor=bd09ll";
+    $rs = json_decode(get($url),1);
+    if($rs['status']==0){
+        $arr = explode('|',$rs['address']);
+        $arr = ['province'=>$arr[1],'city'=>$arr[2]];
+    }else{
+        $arr = [];
+    }
+
+    return $arr;
+}
