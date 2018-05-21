@@ -3,6 +3,7 @@
 	"description": "这是一个提取自微擎的数据库操作类,非常好用,如果你经常写微擎模块,那么在其他个人项目中也想使用相同操作,这个库将是你不二选择",
 		"type": "library",
 		  "license": "MIT",	
+		    "minimum-stability": "dev",
 	"authors": [{
 		"name": "yoby",
 		"email": "logove@qq.com"
