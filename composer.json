@@ -12,11 +12,5 @@
 		"psr-4": {
 			"logoove\\pdo\\": "src"
 		}
-	},
-	 "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
-    }
+	}
 }
